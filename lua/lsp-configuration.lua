@@ -20,7 +20,7 @@ autocmd("LspAttach", {
     local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
     local bufopts = { noremap = true, silent = true, buffer = ev.buf }
     map("i", "<C-k>", vim.lsp.completion.get, bufopts) -- open completion menu manually
-    map("n", "grd", vim.lsp.buf.definition, bufopts)
+    map("n", "gd", vim.lsp.buf.definition, bufopts)
 
     local methods = vim.lsp.protocol.Methods
     -- https://github.com/neovim/neovim/blob/b2828af5b5aba044cd40594a519d2d9f5dbb69cb/runtime/lua/vim/lsp/protocol.lua?plain=1#L858
